@@ -3,4 +3,7 @@ from .models import Item
 
 
 def index(request):
-    return render(request, 'itemspage/mainpage.html', {'items': Item.objects.all()})
+    context = {
+        'items': Item.objects.all()
+    }
+    return render(request, 'itemspage/mainpage.html', context)
