@@ -8,7 +8,7 @@
           <div class="col-md-5 mb-4 mb-md-0">
 
             <div class="view zoom z-depth-2 rounded">
-              <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Eco/img(24).jpg" alt="Sample">
+              <img class="img-fluid w-100" src="{{ item.image.url }}" alt="Sample">
               <a href="#!">
                 <div class="mask"></div>
               </a>
@@ -17,8 +17,8 @@
           </div>
           <div class="col-md-7">
 
-            <h5>Dark grapes from Italy, Lazio - 1kg</h5>
-            <p class="mb-2 text-muted text-uppercase small">Fruits</p>
+            <h5>{{ item.title }}</h5>
+            <p class="mb-2 text-muted text-uppercase small">{{ item.get_category_display }}</p>
             {% comment %} <ul class="rating">
               <li>
                 <i class="fas fa-star fa-sm text-primary"></i>
@@ -36,24 +36,19 @@
                 <i class="far fa-star fa-sm text-primary"></i>
               </li>
             </ul> {% endcomment %}
-            <p><span class="mr-1"><strong>$11.99</strong></span></p>
-            <p class="pt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit
-              error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio,
-              officia quis dolore quos sapiente tempore alias.</p>
+            <p><span class="mr-1"><strong>Rs. {{ item.price }} {{ item.get_price_type_display }}</strong></span></p>
+            <p class="pt-1">This is the description area of the product. In this section you can add the full details of the product.
+            Details play a important part in the good impact of the item. A good description also lures the customer to buy the product</p>
             <div class="table-responsive">
               <table class="table table-sm table-borderless mb-0">
                 <tbody>
                   <tr>
                     <th class="pl-0 w-25" scope="row"><strong>Country</strong></th>
-                    <td>Italy</td>
+                    <td>Pakistan</td>
                   </tr>
                   <tr>
                     <th class="pl-0 w-25" scope="row"><strong>Province</strong></th>
-                    <td>Lazio</td>
-                  </tr>
-                  <tr>
-                    <th class="pl-0 w-25" scope="row"><strong>Type</strong></th>
-                    <td>Abbuoto</td>
+                    <td>Punjab</td>
                   </tr>
                 </tbody>
               </table>
