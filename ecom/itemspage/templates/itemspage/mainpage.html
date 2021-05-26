@@ -4,204 +4,45 @@
 
 {% block body %}
 
-<div class="container d-flex justify-content-center mt-50 mb-50">
-    <div class="row">
+<div class="container">
 
-    {% for item in items %}
-{% comment %} https://res.cloudinary.com/dxfq3iotg/image/upload/v1562074043/234.png {% endcomment %}
-        <div class="col-md-4 mt-2">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-img-actions"> <img src="{{ item.image.url }}" class="card-img img-fluid" width="96" height="350" alt="Sorry, No Image Available"> </div>
-                </div>
-                <div class="card-body bg-light text-center">
-                    <div class="mb-2">
-                        <h6 class="font-weight-semibold mb-2"> <a href="#" class="text-default mb-2" data-abc="true"><strong>{{ item.title }}</strong></a>
-                        </h6> <a href="#" class="text-muted" data-abc="true">{{ item.get_category_display }}</a>
-                    </div>
-                    <h3 class="mb-0 font-weight-semibold"><strong>{{ item.price }}</strong> {{ item.get_price_type_display }}</h3>
-                    <div> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> </div>
-                    <br><button type="button" class="btn btn-primary bg-cart">Add to Cart</button>
-                </div>
+  <!--Section: Block Content-->
+  <section>
+    <h3 class="text-center mt-4 pt-5">Recommended products</h3>
+    <!-- Grid row -->
+    <div class="row mt-5 mb-4">
+      {% for item in items %}
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-3 mb-4">
+          <!-- Card -->
+          <div class="">
+
+            <div class="view zoom z-depth-2 rounded">
+              <img class="img-fluid w-100" src="{{ item.image.url }}" alt="Sample">
+              <a href="/{{ item.pk }}">
+              <div class="mask"></div>
+              </a>
             </div>
+
+            <div class="text-center pt-4">
+              <h5 class="mb-0">{{ item.title }}</h5>
+              <h5>({{ item.get_price_type_display }})</h5>
+              <h6 class="mb-3">Rs. {{ item.price }}</h6>
+              <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+              <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
+            </div>
+
+          </div>
+          <!-- Card -->
         </div>
-    
-    {% endfor %}
+        <!-- Grid column -->
+      {% endfor %}
     </div>
+    <!-- Grid row -->
+  </section>
+  <!--Section: Block Content-->
+
 </div>
-
- <!-- Main layout -->
-  <main>
-
-    <div class="container">
-
-      <!--Section: Block Content-->
-      <section>
-
-        <h3 class="text-center mt-4 pt-5">Recommended products</h3>
-
-        <!-- Grid row -->
-        <div class="row mt-5 mb-4">
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-3 mb-4">
-
-            <!-- Card -->
-            <div class="">
-
-              <div class="view zoom z-depth-2 rounded">
-                <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Eco/img(83).jpg" alt="Sample">
-                <a href="#!">
-                  <div class="mask"></div>
-                </a>
-              </div>
-
-              <div class="text-center pt-4">
-
-                <h5 class="mb-0">Organic raspberries</h5>
-                <h5>(500g)</h5>
-                <h6 class="mb-3">$ 8.99</h6>
-                <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
-
-              </div>
-
-            </div>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
-          {% for item in items %}
-          
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-3 mb-4">
-
-            <!-- Card -->
-            <div class="">
-
-              <div class="view zoom z-depth-2 rounded">
-                <img class="img-fluid w-100" src="{{ item.image.url }}" alt="Sample">
-                <a href="#!">
-                  <div class="mask"></div>
-                </a>
-              </div>
-
-              <div class="text-center pt-4">
-
-                <h5 class="mb-0">{{ item.title }}</h5>
-                <h5>({{ item.get_price_type_display }})</h5>
-                <h6 class="mb-3">Rs. {{ item.price }}</h6>
-                <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
-
-              </div>
-
-            </div>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
-          {% endfor %}
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-3 mb-4">
-
-            <!-- Card -->
-            <div class="">
-
-              <div class="view zoom z-depth-2 rounded">
-                <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Eco/img(92).jpg" alt="Sample">
-                <a href="#!">
-                  <div class="mask"></div>
-                </a>
-              </div>
-
-              <div class="text-center pt-4">
-
-                <h5 class="mb-0">Organic nectarines</h5>
-                <h5>(1kg)</h5>
-                <h6 class="mb-3">$ 9.99</h6>
-                <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
-
-              </div>
-
-            </div>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-3 mb-4">
-
-            <!-- Card -->
-            <div class="">
-
-              <div class="view zoom z-depth-2 rounded">
-                <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Eco/img(93).jpg" alt="Sample">
-                <a href="#!">
-                  <div class="mask"></div>
-                </a>
-              </div>
-
-              <div class="text-center pt-4">
-
-                <h5 class="mb-0">Organic strawberries</h5>
-                <h5>(500g)</h5>
-                <h6 class="mb-3">$ 7.99</h6>
-                <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
-
-              </div>
-
-            </div>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-3 mb-4">
-
-            <!-- Card -->
-            <div class="">
-
-              <div class="view zoom z-depth-2 rounded">
-                <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Eco/img(39).jpg" alt="Sample">
-                <a href="#!">
-                  <div class="mask"></div>
-                </a>
-              </div>
-
-              <div class="text-center pt-4">
-
-                <h5 class="mb-0">Organic pomegranate</h5>
-                <h5>(1kg)</h5>
-                <h6 class="mb-3">$ 11.99</h6>
-                <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
-
-              </div>
-
-            </div>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
-        </div>
-        <!-- Grid row -->
-
-      </section>
-      <!--Section: Block Content-->
-
-    </div>
-
-  </main>
-  <!-- Main layout -->
 
 
 {% endblock body %}
