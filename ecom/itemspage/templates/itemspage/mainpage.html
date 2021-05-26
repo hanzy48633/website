@@ -3,46 +3,61 @@
 {% block title %}Meat &amp Eat{% endblock title %}
 
 {% block body %}
+ <!-- Main layout -->
+  <main>
 
-<div class="container">
+    <div class="container">
 
-  <!--Section: Block Content-->
-  <section>
-    <h3 class="text-center mt-4 pt-5">Recommended products</h3>
-    <!-- Grid row -->
-    <div class="row mt-5 mb-4">
-      {% for item in items %}
-        <!-- Grid column -->
-        <div class="col-md-6 col-lg-3 mb-4">
-          <!-- Card -->
-          <div class="">
+      <!--Section: Block Content-->
+      <section>
 
-            <div class="view zoom z-depth-2 rounded">
-              <img class="img-fluid w-100" src="{{ item.image.url }}" alt="Sample">
-              <a href="/{{ item.pk }}">
-              <div class="mask"></div>
-              </a>
+        <h3 class="text-center mt-4 pt-5">Recommended products</h3>
+
+        <!-- Grid row -->
+        <div class="row mt-5 mb-4">
+
+          {% for item in items %}
+          
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-3 mb-4">
+
+            <!-- Card -->
+            <div class="">
+
+              <div class="view zoom z-depth-2 rounded">
+                <a href="{% url 'product_view' item.pk%}">
+                <img class="img-fluid w-100" src="{{ item.image.url }}" alt="Sample">
+                </a>
+              </div>
+
+              <div class="text-center pt-4">
+
+                <h5 class="mb-0">{{ item.title }}</h5>
+                <h5>({{ item.get_price_type_display }})</h5>
+                <h6 class="mb-3">Rs. {{ item.price }}</h6>
+                <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+                <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
+
+              </div>
+
             </div>
-
-            <div class="text-center pt-4">
-              <h5 class="mb-0">{{ item.title }}</h5>
-              <h5>({{ item.get_price_type_display }})</h5>
-              <h6 class="mb-3">Rs. {{ item.price }}</h6>
-              <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-              <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
-            </div>
+            <!-- Card -->
 
           </div>
-          <!-- Card -->
-        </div>
-        <!-- Grid column -->
-      {% endfor %}
-    </div>
-    <!-- Grid row -->
-  </section>
-  <!--Section: Block Content-->
+          <!-- Grid column -->
 
-</div>
+          {% endfor %}
+
+        </div>
+        <!-- Grid row -->
+
+      </section>
+      <!--Section: Block Content-->
+
+    </div>
+
+  </main>
+  <!-- Main layout -->
 
 
 {% endblock body %}
