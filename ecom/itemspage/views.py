@@ -15,3 +15,7 @@ def productDetail(request, _id):
     }
 
     return render(request, 'itemspage/productpage.html', context)
+
+
+def login(request):
+    return render(request, 'itemspage/loginpage.html')
