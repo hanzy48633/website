@@ -19,3 +19,7 @@ def productDetail(request, _id):
 
 def login(request):
     return render(request, 'itemspage/loginpage.html')
+
+
+def register(request):
+    return render(request, 'itemspage/registerpage.html')
