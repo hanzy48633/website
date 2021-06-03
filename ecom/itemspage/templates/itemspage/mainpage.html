@@ -35,8 +35,13 @@
                 <a href="{% url 'product_view' item.pk %}"><h5 class="mb-0">{{ item.title }}</h5></a>
                 <h5>({{ item.get_price_type_display }})</h5>
                 <h6 class="mb-3">Rs. {{ item.price }}</h6>
-                <button type="button" class="btn btn-primary btn-sm mr-1"><a><i class="fas fa-shopping-cart pr-2"></i>&nbsp Add to cart</a></button>
-                <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
+
+                <a href="#">
+                  <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-shopping-cart pr-2"></i>&nbsp Add to cart</button>
+                </a>
+                <a href="{% url 'product_view' item.pk %}">
+                  <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i> Details</button>
+                </a>
 
               </div>
 
