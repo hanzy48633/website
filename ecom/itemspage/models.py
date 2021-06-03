@@ -21,6 +21,7 @@ class Item(models.Model):
     price_type = models.CharField(choices=PRICE_CATEGORY, max_length=2, default='PP')
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
     quantity = models.IntegerField()
+    description = models.TextField(default="This is the description for the {}".format(title))
     image = models.ImageField()
 
     def __str__(self):

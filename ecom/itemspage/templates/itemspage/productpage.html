@@ -37,8 +37,7 @@
               </li>
             </ul> {% endcomment %}
             <p><span class="mr-1"><strong>Rs. {{ item.price }} {{ item.get_price_type_display }}</strong></span></p>
-            <p class="pt-1">This is the description area of the product. In this section you can add the full details of the product.
-            Details play a important part in the good impact of the item. A good description also lures the customer to buy the product</p>
+            <p class="pt-1">{{ item.description }}</p>
             <div class="table-responsive">
               <table class="table table-sm table-borderless mb-0">
                 <tbody>
