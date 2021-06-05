@@ -35,7 +35,6 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{% url 'index_view' %}">Home</a>
                         </li>
-                    
                     </ul>
 
                     <div class="d-flex align-items-center">
@@ -54,8 +53,9 @@
                                 <a class="nav-link" aria-current="page" href="{% url 'register_view' %}">Sign up for Free!</a>
                             </button>
                         {% endif %}
-                        <a class="btn btn-dark px-3" href="https://github.com/mdbootstrap/mdb-ui-kit" role="button">
-                            <i class="fab fa-github"></i>
+                        <a class="btn btn-dark px-3" href="http://127.0.0.1:8000/admin/" role="button" target="_blank">
+                            {% comment %} <i class="fab fa-github"></i> {% endcomment %}
+                            <i class="fas fa-broadcast-tower"></i>
                         </a>
                     </div>
 
