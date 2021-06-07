@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.contrib.auth import logout
 from .models import Item
 
 
@@ -17,8 +19,13 @@ def productDetail(request, _id):
     return render(request, 'itemspage/productpage.html', context)
 
 
-def login(request):
+def _login(request):
     return render(request, 'itemspage/loginpage.html')
+
+
+def _logout(request):
+    logout(request)
+    return redirect(reverse('index_view'))
 
 
 def register(request):
