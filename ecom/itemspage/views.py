@@ -20,6 +20,8 @@ def productDetail(request, _id):
 
 
 def _login(request):
+    
+    
     return render(request, 'itemspage/loginpage.html')
 
 
