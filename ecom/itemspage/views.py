@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.contrib.auth import logout
+from django.contrib.auth import logout, login, authenticate
+from django.contrib.auth.forms import UserCreationForm
 from .models import Item
 
 
@@ -20,8 +21,15 @@ def productDetail(request, _id):
 
 
 def _login(request):
-    
-    
+    if request.method == 'POST':
+        username = request.POST.get('username', False)
+        password = request.POST.get('password', False)
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(user=user)
+            return redirect(reverse('index_view'))
+        else:
+            return render(request, 'itemspage/loginpage.html')
     return render(request, 'itemspage/loginpage.html')
 
 
