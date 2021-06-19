@@ -1,5 +1,7 @@
 {% extends 'itemspage/base.html' %}
 
+{% block title %}Sign Up{% endblock title %}
+
 {% block body %}
 
 <!--Intro Section-->
@@ -9,46 +11,48 @@
       <div class="row">
         <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto mt-lg-5">
 
-          <!--Form with header-->
-          <div class="card wow fadeIn" data-wow-delay="0.3s">
-            <div class="card-body">
+          <form method="post" action="">
+            <!--Form with header-->
+            <div class="card wow fadeIn" data-wow-delay="0.3s">
+              <div class="card-body">
 
-              <!--Header-->
-              <div class="form-header purple-gradient">
-                <h3><i class="fas fa-user mt-2 mb-2"></i> Register Here:</h3>
-              </div>
-
-              <!--Body-->
-              <div class="md-form">
-                <i class="fas fa-user prefix white-text"></i>
-                <input type="text" id="orangeForm-name" class="form-control">
-                <label for="orangeForm-name">Your UserName (without space)</label>
-              </div>
-              <div class="md-form">
-                <i class="fas fa-envelope prefix white-text"></i>
-                <input type="text" id="orangeForm-email" class="form-control">
-                <label for="orangeForm-email">Your email</label>
-              </div>
-
-              <div class="md-form">
-                <i class="fas fa-lock prefix white-text"></i>
-                <input type="password" id="orangeForm-pass" class="form-control">
-                <label for="orangeForm-pass">Your password</label>
-              </div>
-
-              <div class="text-center">
-                <button class="btn btn-primary btn-lg">Sign up</button>
-                <hr>
-                <div class="inline-ul text-center d-flex justify-content-center">
-                  <a class="p-2 m-2 fa-lg tw-ic"><i class="fab fa-twitter white-text"></i></a>
-                  <a class="p-2 m-2 fa-lg li-ic"><i class="fab fa-linkedin-in white-text"> </i></a>
-                  <a class="p-2 m-2 fa-lg ins-ic"><i class="fab fa-instagram white-text"> </i></a>
+                <!--Header-->
+                <div class="form-header purple-gradient">
+                  <h3><i class="fas fa-user mt-2 mb-2"></i> Register Here:</h3>
                 </div>
-              </div>
 
+                <!--Body-->
+                <div class="md-form">
+                  <i class="fas fa-user prefix white-text"></i>
+                  <input type="text" id="orangeForm-name" class="form-control">
+                  <label for="orangeForm-name">Your UserName (without space)</label>
+                </div>
+                <div class="md-form">
+                  <i class="fas fa-envelope prefix white-text"></i>
+                  <input type="text" id="orangeForm-email" class="form-control">
+                  <label for="orangeForm-email">Your email</label>
+                </div>
+
+                <div class="md-form">
+                  <i class="fas fa-lock prefix white-text"></i>
+                  <input type="password" id="orangeForm-pass" class="form-control">
+                  <label for="orangeForm-pass">Your password</label>
+                </div>
+
+                <div class="text-center">
+                  <button class="btn btn-primary btn-lg" type="submit">Sign up</button>
+                  <hr>
+                  <div class="inline-ul text-center d-flex justify-content-center">
+                    <a class="p-2 m-2 fa-lg tw-ic"><i class="fab fa-twitter white-text"></i></a>
+                    <a class="p-2 m-2 fa-lg li-ic"><i class="fab fa-linkedin-in white-text"> </i></a>
+                    <a class="p-2 m-2 fa-lg ins-ic"><i class="fab fa-instagram white-text"> </i></a>
+                  </div>
+                </div>
+
+              </div>
             </div>
-          </div>
-          <!--/Form with header-->
+           <!--/Form with header-->
+          </form>
 
         </div>
       </div>
